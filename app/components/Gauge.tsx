@@ -3,9 +3,8 @@ import Svg, { Line, Text as SvgText, Path } from 'react-native-svg';
 
 const Gauge = ({ value }: { value: number }) => {
   const getNeedleAngle = () => {
-    // Converts the value to an angle in degrees
-    // 0 -> -90 degrees (left), 50 -> 0 degrees (top), 100 -> 90 degrees (right)
-    return ((value / 100) * 180) - 90;
+    const reversedValue = 100 - value;
+    return (reversedValue / 100) * 180;
   };
 
   return (
@@ -16,19 +15,6 @@ const Gauge = ({ value }: { value: number }) => {
           d="M 50 150 A 100 100 0 0 1 350 150"
           fill="none"
           stroke="#E5E7EB"
-          strokeWidth="40"
-        />
-        {/* Sections (Extreme Fear to Extreme Greed) */}
-        <Path
-          d="M 50 150 A 100 100 0 0 1 200 50"
-          fill="none"
-          stroke="#D97706" // Extreme Fear
-          strokeWidth="40"
-        />
-        <Path
-          d="M 200 50 A 100 100 0 0 1 350 150"
-          fill="none"
-          stroke="#34D399" // Greed
           strokeWidth="40"
         />
 
