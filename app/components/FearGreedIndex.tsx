@@ -7,6 +7,7 @@ import axios from 'axios';
 import { formatTimestamp } from '../utils';
 import { colors, fontSizes, spacing, borderRadius, shadows } from '../design-tokens';
 import { FEAR_GREED_INDEX_API_URL } from '../constants';
+import Gauge from './Gauge';
 
 // Fear and Greed Index 데이터를 가져오는 함수
 const fetchFearGreedIndex = async () => {
@@ -31,6 +32,7 @@ const FearGreedIndex = () => {
 
   return (
     <View style={styles.indexContainer}>
+      <Gauge value={index.value} />
       <Text style={styles.indexValue}>{index.value}</Text>
       <Text style={styles.indexClassification}>현재 수준: {index.value_classification}</Text>
       <Text style={styles.timestamp}>{formatTimestamp(index.timestamp)}</Text>
