@@ -22,7 +22,7 @@ const Gauge = ({ value }: { value: number }) => {
         <Line
           x1="200" y1="150"
           x2={200 + 100 * Math.cos((getNeedleAngle() * Math.PI) / 180)}
-          y2={150 - 100 * Math.sin((getNeedleAngle() * Math.PI) / 180)} // y2 inverted
+          y2={150 - 100 * Math.sin((getNeedleAngle() * Math.PI) / 180)}
           stroke="black"
           strokeWidth="4"
         />
