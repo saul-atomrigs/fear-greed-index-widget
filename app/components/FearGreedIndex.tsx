@@ -28,14 +28,13 @@ const FearGreedIndex = () => {
     return <Text style={styles.errorText}>데이터를 불러오는데 실패했습니다.</Text>;
   }
 
-  const index = data?.data?.[0];
+  const fearGreedIndex = data?.fearAndGreedIndex;
 
   return (
     <View style={styles.indexContainer}>
-      <Gauge value={index.value} />
-      <Text style={styles.indexValue}>{index.value}</Text>
-      <Text style={styles.indexClassification}>현재 수준: {index.value_classification}</Text>
-      <Text style={styles.timestamp}>{formatTimestamp(index.timestamp)}</Text>
+      <Gauge value={fearGreedIndex} />
+      <Text style={styles.indexValue}>{fearGreedIndex}</Text>
+      {/* <Text style={styles.timestamp}>{formatTimestamp(index.timestamp)}</Text> */}
     </View>
   );
 };
