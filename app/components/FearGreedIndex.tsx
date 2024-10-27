@@ -4,7 +4,6 @@ import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
-import { formatTimestamp } from '../utils';
 import { colors, fontSizes, spacing, borderRadius, shadows } from '../design-tokens';
 import { FEAR_GREED_INDEX_API_URL } from '../constants';
 import Gauge from './Gauge';
@@ -28,14 +27,12 @@ const FearGreedIndex = () => {
     return <Text style={styles.errorText}>데이터를 불러오는데 실패했습니다.</Text>;
   }
 
-  const index = data?.data?.[0];
+  const { fearAndGreedIndex, timestamp } = data;
 
   return (
     <View style={styles.indexContainer}>
-      <Gauge value={index.value} />
-      <Text style={styles.indexValue}>{index.value}</Text>
-      <Text style={styles.indexClassification}>현재 수준: {index.value_classification}</Text>
-      <Text style={styles.timestamp}>{formatTimestamp(index.timestamp)}</Text>
+      <Gauge value={fearAndGreedIndex} />
+      <Text style={styles.timestamp}>{timestamp}</Text>
     </View>
   );
 };
