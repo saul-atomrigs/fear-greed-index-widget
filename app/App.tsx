@@ -11,7 +11,7 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <SafeAreaView style={styles.container}>
-        <Text style={styles.title}>Fear and Greed Index</Text>
+        <Text style={styles.title}>공포 탐욕 지수</Text>
         <FearGreedIndex />
       </SafeAreaView>
     </QueryClientProvider>
