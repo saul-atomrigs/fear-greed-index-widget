@@ -9,7 +9,7 @@ const Gauge = ({ value }: { value: number }) => {
 
   return (
     <>
-      <Svg height="200" width="400" viewBox="0 0 400 200">
+      <Svg height="200" width="300" viewBox="0 0 400 200">
         {/* Semi-circle */}
         <Path
           d="M 50 150 A 100 100 0 0 1 350 150"
