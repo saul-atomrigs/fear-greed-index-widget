@@ -38,6 +38,30 @@ const Gauge = ({ value }: { value: number }) => {
         >
           {value}
         </SvgText>
+
+        {/* Left Label: 공포 */}
+        <SvgText
+          x="50"
+          y="130"
+          fontSize="20"
+          fill="purple"
+          textAnchor="middle"
+          fontWeight="bold"
+        >
+          공포
+        </SvgText>
+
+        {/* Right Label: 탐욕 */}
+        <SvgText
+          x="350"
+          y="130"
+          fontSize="20"
+          fill="red"
+          textAnchor="middle"
+          fontWeight="bold"
+        >
+          탐욕
+        </SvgText>
       </Svg>
     </>
   );
